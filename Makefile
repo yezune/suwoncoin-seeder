@@ -1,3 +1,4 @@
+#CXX=clang
 CXXFLAGS = -O3 -g0
 LDFLAGS = $(CXXFLAGS)
 
@@ -11,3 +12,8 @@ dns.o: dns.c
 	gcc -pthread -std=c99 $(CXXFLAGS) dns.c -c -o dns.o
 
 %.o: %.cpp
+
+clean:
+	rm -rf *.o dnsseed
+
+all: dnsseed
